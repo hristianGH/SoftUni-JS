@@ -7,15 +7,13 @@ function create(words) {
     paragraph.style.display = "none";
     div.appendChild(paragraph);
     content.appendChild(div);
-  });
-
-  content.addEventListener("click", function (e) {
-     console.log(e.target)
-    if (e.target.tagName === "DIV" || e.target.tagName==='P') {
+    div.addEventListener('click', function(e){
       const p = e.target.children[0] || e.target;
       const isVisible = p.style.display === "block";
       p.style.display = isVisible ? "none" : "block";
       console.log(p.style.display)
-    }
+    })
   });
+
+ 
 }
